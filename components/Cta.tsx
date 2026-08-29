@@ -1,10 +1,11 @@
 import { I18n } from '@/lib/i18n';
+import { Reveal } from './Reveal';
 
 export function Cta() {
   return (
     <section id="contato">
       <div className="wrap">
-        <div className="cta-wrap">
+        <Reveal className="cta-wrap">
           <div className="cta-card">
             <span className="eyebrow">
               <span className="pulse" />
@@ -30,7 +31,7 @@ export function Cta() {
               <I18n pt="Falar no WhatsApp" en="Message on WhatsApp" />
             </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

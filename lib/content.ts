@@ -53,6 +53,7 @@ export type ProjectStatus = 'live' | 'building' | 'documented' | 'evolving';
 
 export type Project = {
   id: string;
+  mockup: string;
   tags: Bi[];
   title: Bi;
   description: Bi;
@@ -63,6 +64,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 'novaes',
+    mockup: '/mockups/mockup-novaes.svg',
     tags: [
       { pt: 'UI/UX', en: 'UI/UX' },
       { pt: 'Vibe Coding', en: 'Vibe Coding' },
@@ -79,6 +81,7 @@ export const projects: Project[] = [
   },
   {
     id: 'boardini',
+    mockup: '/mockups/mockup-boardini.svg',
     tags: [
       { pt: 'Front-end', en: 'Front-end' },
       { pt: 'Painel de Clientes', en: 'Client Dashboard' },
@@ -94,6 +97,7 @@ export const projects: Project[] = [
   },
   {
     id: 'whatsapp-pipeline',
+    mockup: '/mockups/mockup-pipeline-whatsapp.svg',
     tags: [
       { pt: 'Automação', en: 'Automation' },
       { pt: 'LLM', en: 'LLM' },
@@ -109,6 +113,7 @@ export const projects: Project[] = [
   },
   {
     id: 'whatsapp-b2c-dashboard',
+    mockup: '/mockups/mockup-cs-dashboard.svg',
     tags: [
       { pt: 'Automação', en: 'Automation' },
       { pt: 'Dados', en: 'Data' },
@@ -124,6 +129,7 @@ export const projects: Project[] = [
   },
   {
     id: 'onboarding-automation',
+    mockup: '/mockups/mockup-onboarding.svg',
     tags: [
       { pt: 'Claude Cowork', en: 'Claude Cowork' },
       { pt: 'Movidesk', en: 'Movidesk' },
@@ -139,6 +145,7 @@ export const projects: Project[] = [
   },
   {
     id: 'study-dashboard',
+    mockup: '/mockups/mockup-study.svg',
     tags: [
       { pt: 'Projeto Pessoal', en: 'Personal Project' },
       { pt: 'Front-end', en: 'Front-end' },

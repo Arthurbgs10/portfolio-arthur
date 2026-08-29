@@ -28,22 +28,52 @@
 * {
   box-sizing: border-box;
 }
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 body {
+  position: relative;
   margin: 0;
-  background:
-    radial-gradient(1100px 550px at 12% -8%, rgba(238, 96, 24, 0.12), transparent 60%),
-    radial-gradient(900px 650px at 100% 22%, rgba(160, 202, 146, 0.09), transparent 55%),
-    radial-gradient(700px 500px at 45% 100%, rgba(238, 96, 24, 0.07), transparent 60%),
-    var(--obsidian-canvas);
-  background-attachment: fixed;
+  background: var(--obsidian-canvas);
   color: var(--bone);
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: -10%;
+  z-index: -1;
+  background-image: radial-gradient(1100px 550px at 12% -8%, rgba(238, 96, 24, 0.12), transparent 60%),
+    radial-gradient(900px 650px at 100% 22%, rgba(160, 202, 146, 0.09), transparent 55%),
+    radial-gradient(700px 500px at 45% 100%, rgba(238, 96, 24, 0.07), transparent 60%);
+}
+@keyframes bg-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-2.5%, 2%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(2%, -1.5%, 0) scale(1.02);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::before {
+    animation: bg-drift 44s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+}
+@media (max-width: 640px) {
+  body::before {
+    animation: none;
+  }
 }
 a {
   color: inherit;
@@ -412,6 +442,7 @@ nav.wrap {
 }
 .feature-card {
   position: relative;
+  height: 100%;
   border: 1px solid var(--carbon-lift);
   border-radius: var(--r-card);
   padding: 20px;
@@ -431,11 +462,13 @@ nav.wrap {
   transition: opacity 0.25s ease;
   pointer-events: none;
 }
-.feature-card:hover {
-  border-color: transparent;
-}
-.feature-card:hover::after {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .feature-card:hover {
+    border-color: transparent;
+  }
+  .feature-card:hover::after {
+    opacity: 1;
+  }
 }
 .feature-card h3 {
   font-size: 20px;
@@ -473,6 +506,7 @@ nav.wrap {
 }
 .project-card {
   position: relative;
+  height: 100%;
   border: 1px solid var(--carbon-lift);
   border-radius: var(--r-card);
   overflow: hidden;
@@ -494,57 +528,26 @@ nav.wrap {
   transition: opacity 0.25s ease;
   pointer-events: none;
 }
-.project-card:hover {
-  border-color: transparent;
-}
-.project-card:hover::after {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover {
+    border-color: transparent;
+  }
+  .project-card:hover::after {
+    opacity: 1;
+  }
 }
 .mock {
+  position: relative;
   background: #0d0d0d;
   border-bottom: 1px solid var(--carbon-lift);
+  aspect-ratio: 960 / 580;
+  overflow: hidden;
 }
-.mock-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 10px 14px;
-  background: var(--carbon-lift);
-}
-.mock-body {
-  padding: 16px;
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.bar {
-  border-radius: 2px;
-  background: var(--graphite-mid);
-}
-.mock-nav {
-  height: 10px;
-  width: 40%;
-}
-.mock-hero {
-  height: 46px;
-  width: 80%;
-  background: var(--ash-stroke);
-}
-.mock-sub {
-  height: 10px;
-  width: 60%;
-}
-.mock-row {
-  display: flex;
-  gap: 8px;
-  flex: 1;
-}
-.mock-block {
-  flex: 1;
-  border-radius: 4px;
-  background: var(--carbon-lift);
-  border: 1px solid var(--ash-stroke);
+.mock img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 .project-body {
   padding: var(--card-padding);
@@ -739,4 +742,34 @@ footer .col a:hover {
   .project-grid {
     grid-template-columns: 1fr;
   }
+  /* Large blur radii are expensive to repaint on low-power mobile GPUs —
+     shrink the ambient glows instead of dropping them outright. */
+  .dash-frame-wrap::before,
+  .about-wrap::before,
+  .cta-wrap::before {
+    inset: -24px;
+    filter: blur(28px);
+  }
+}
+
+/* Scroll-reveal (see components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 0.8, 0.24, 1), transform 0.7s cubic-bezier(0.16, 0.8, 0.24, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+.card-row > .reveal,
+.project-grid > .reveal {
+  height: 100%;
 }

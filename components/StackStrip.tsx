@@ -1,3 +1,5 @@
+import { Reveal } from './Reveal';
+
 const tools = [
   { name: 'Next.js', icon: '/icons/nextjs.svg' },
   { name: 'React', icon: '/icons/reactjs.svg' },
@@ -13,17 +15,17 @@ const tools = [
 export function StackStrip() {
   return (
     <div className="stack-strip">
-      <div className="wrap stack-row">
+      <Reveal className="wrap stack-row">
         {tools.map((tool) => (
           <span className="stack-item" key={tool.name}>
             {tool.icon && (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={tool.icon} alt="" width={20} height={20} />
+              <img src={tool.icon} alt="" width={20} height={20} loading="lazy" />
             )}
             {tool.name}
           </span>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

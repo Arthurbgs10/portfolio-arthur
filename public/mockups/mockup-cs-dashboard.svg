@@ -1,0 +1,64 @@
+<svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <defs><clipPath id="frame4"><rect x="0" y="0" width="960" height="600" rx="14"/></clipPath></defs>
+  <g clip-path="url(#frame4)">
+    <rect width="960" height="600" fill="#0d0d0d"/>
+    <rect width="960" height="40" fill="#1d1a18"/>
+    <circle cx="24" cy="20" r="6" fill="#3d3a39"/>
+    <circle cx="44" cy="20" r="6" fill="#3d3a39"/>
+    <circle cx="64" cy="20" r="6" fill="#3d3a39"/>
+    <text x="90" y="25" font-family="monospace" font-size="12" letter-spacing="1" fill="#b8b3b0">CS.ATENDIMENTO</text>
+
+    <!-- sidebar -->
+    <rect x="0" y="40" width="160" height="560" fill="#1d1a18"/>
+    <rect x="24" y="72" width="112" height="10" rx="2" fill="#4d4947"/>
+    <rect x="24" y="104" width="90" height="8" rx="2" fill="#3d3a39"/>
+    <rect x="24" y="128" width="90" height="8" rx="2" fill="#eeeeee"/>
+    <rect x="24" y="152" width="90" height="8" rx="2" fill="#3d3a39"/>
+    <rect x="24" y="176" width="90" height="8" rx="2" fill="#3d3a39"/>
+
+    <!-- KPI tiles -->
+    <g font-family="monospace" font-size="10" fill="#b8b3b0">
+      <rect x="192" y="64" width="230" height="90" rx="6" fill="none" stroke="#1d1a18"/>
+      <text x="208" y="86">TOTAL DE CONVERSAS</text>
+      <text x="208" y="120" font-size="24" fill="#eeeeee">312</text>
+      <polyline points="208,138 240,132 270,136 300,124 330,128 360,116" fill="none" stroke="#8a8380" stroke-width="2"/>
+
+      <rect x="440" y="64" width="230" height="90" rx="6" fill="none" stroke="#1d1a18"/>
+      <text x="456" y="86">RESOLVIDAS</text>
+      <text x="456" y="120" font-size="24" fill="#eeeeee">278</text>
+      <polyline points="456,134 486,128 516,130 546,118 576,120 606,108" fill="none" stroke="#a0ca92" stroke-width="2"/>
+
+      <rect x="688" y="64" width="232" height="90" rx="6" fill="none" stroke="#1d1a18"/>
+      <text x="704" y="86">URGÊNCIA ALTA</text>
+      <text x="704" y="120" font-size="24" fill="#eeeeee">14</text>
+      <polyline points="704,120 734,124 764,116 794,126 824,118 854,122" fill="none" stroke="#ee6018" stroke-width="2"/>
+    </g>
+
+    <!-- bar chart: performance por atendente -->
+    <text x="192" y="196" font-family="monospace" font-size="11" fill="#b8b3b0">PERFORMANCE POR ATENDENTE</text>
+    <g fill="#4d4947">
+      <rect x="192" y="240" width="48" height="80" rx="2"/>
+      <rect x="256" y="210" width="48" height="110" rx="2"/>
+      <rect x="320" y="256" width="48" height="64" rx="2"/>
+      <rect x="384" y="224" width="48" height="96" rx="2"/>
+      <rect x="448" y="200" width="48" height="120" rx="2"/>
+    </g>
+    <line x1="192" y1="320" x2="920" y2="320" stroke="#1d1a18"/>
+
+    <!-- message list with urgency indicators -->
+    <text x="192" y="360" font-family="monospace" font-size="11" fill="#b8b3b0">FILA · CLASSIFICAÇÃO DE URGÊNCIA</text>
+    <g>
+      <rect x="192" y="380" width="728" height="40" rx="4" fill="#1d1a18"/>
+      <circle cx="212" cy="400" r="5" fill="#ee6018"/>
+      <rect x="232" y="394" width="300" height="10" rx="2" fill="#8a8380"/>
+
+      <rect x="192" y="428" width="728" height="40" rx="4" fill="#1d1a18"/>
+      <circle cx="212" cy="448" r="5" fill="none" stroke="#ee6018" stroke-width="2"/>
+      <rect x="232" y="442" width="260" height="10" rx="2" fill="#8a8380"/>
+
+      <rect x="192" y="476" width="728" height="40" rx="4" fill="#1d1a18"/>
+      <circle cx="212" cy="496" r="3.5" fill="#8a8380"/>
+      <rect x="232" y="490" width="220" height="10" rx="2" fill="#4d4947"/>
+    </g>
+  </g>
+</svg>

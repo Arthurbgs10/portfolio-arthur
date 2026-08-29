@@ -1,4 +1,5 @@
 import { I18n } from '@/lib/i18n';
+import { Reveal } from './Reveal';
 
 const sparklines = [
   { points: '0,26 20,22 40,24 60,14 80,16 100,6 120,8', color: '#ee6018' },
@@ -18,7 +19,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="wrap hero-grid">
-        <div className="hero-copy">
+        <Reveal className="hero-copy">
           <span className="location">
             <I18n pt="Rio de Janeiro, Brasil · PT / EN" en="Rio de Janeiro, Brazil · PT / EN" />
           </span>
@@ -38,9 +39,9 @@ export function Hero() {
               <I18n pt="Falar sobre um projeto" en="Talk about a project" />
             </a>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="dash-frame-wrap">
+        <Reveal className="dash-frame-wrap" delay={150}>
           <div className="dash-frame">
             <div className="dash-titlebar">
               <span className="dot" />
@@ -80,7 +81,7 @@ export function Hero() {
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

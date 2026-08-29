@@ -1,90 +1,12 @@
 import { I18n } from '@/lib/i18n';
 import type { Project } from '@/lib/content';
 
-function ProjectMock({ id }: { id: string }) {
-  switch (id) {
-    case 'novaes':
-      return (
-        <div className="mock-body">
-          <div className="bar mock-nav" />
-          <div className="bar mock-hero" />
-          <div className="bar mock-sub" />
-          <div className="mock-row">
-            <div className="mock-block" />
-            <div className="mock-block" />
-            <div className="mock-block" />
-          </div>
-        </div>
-      );
-    case 'boardini':
-      return (
-        <div className="mock-body">
-          <div className="bar mock-nav" />
-          <div className="mock-row">
-            <div className="mock-block" style={{ flex: 2 }} />
-            <div className="mock-block" />
-          </div>
-          <div className="bar mock-sub" />
-        </div>
-      );
-    case 'whatsapp-pipeline':
-      return (
-        <div className="mock-body">
-          <div className="mock-row">
-            <div className="mock-block" />
-            <div className="mock-block" />
-            <div className="mock-block" />
-            <div className="mock-block" />
-          </div>
-          <div className="bar mock-sub" style={{ width: '90%' }} />
-          <div className="bar mock-sub" style={{ width: '50%' }} />
-        </div>
-      );
-    case 'whatsapp-b2c-dashboard':
-      return (
-        <div className="mock-body">
-          <div className="mock-row">
-            <div className="mock-block" />
-            <div className="mock-block" />
-            <div className="mock-block" />
-          </div>
-          <div className="bar mock-sub" style={{ width: '70%' }} />
-          <div className="bar mock-sub" style={{ width: '40%' }} />
-        </div>
-      );
-    case 'onboarding-automation':
-      return (
-        <div className="mock-body">
-          <div className="bar mock-nav" style={{ width: '30%' }} />
-          <div className="bar mock-sub" style={{ width: '85%' }} />
-          <div className="bar mock-sub" style={{ width: '65%' }} />
-          <div className="bar mock-sub" style={{ width: '45%' }} />
-        </div>
-      );
-    case 'study-dashboard':
-    default:
-      return (
-        <div className="mock-body">
-          <div className="bar mock-nav" style={{ width: '25%' }} />
-          <div className="mock-row">
-            <div className="mock-block" style={{ flex: 1 }} />
-            <div className="mock-block" style={{ flex: 3 }} />
-          </div>
-        </div>
-      );
-  }
-}
-
 export function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="project-card">
       <div className="mock">
-        <div className="mock-bar">
-          <span className="dot" />
-          <span className="dot" />
-          <span className="dot" />
-        </div>
-        <ProjectMock id={project.id} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={project.mockup} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="project-body">
         <div className="project-tags">

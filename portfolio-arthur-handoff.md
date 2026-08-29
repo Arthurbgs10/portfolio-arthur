@@ -165,6 +165,13 @@ Depois da primeira versão (seção acima, "v1"), o site ganhou uma camada de el
 - **Ícones de ferramentas (exceção deliberada à paleta):** a Stack Strip (e futuramente outros pontos que citem ferramentas específicas) usa os ícones de marca reais de cada ferramenta — Next.js, Supabase, PostgreSQL, n8n, Google Gemini, Claude, Vercel, Looker Studio — nas cores oficiais de cada marca. Isso é uma exceção intencional e restrita a **logos reconhecíveis de ferramentas**, não a cores de UI/acento: não abre precedente para novas cores em botões, cards, textos ou qualquer elemento de interface genérico, que continuam restritos à paleta Factory.
 - Ícones ficam em `public/icons/` (baixados de CDNs públicos de ícones open-source: `dashboard-icons` e `@lobehub/icons-static-svg`).
 
+### Evolução v3 — mockups ilustrados, animações e otimização mobile
+
+- **Mockups ilustrados por projeto:** os 6 cards de projeto trocaram os blocos abstratos genéricos por SVGs ilustrados próprios (`public/mockups/`), cada um recriando a interface real de forma estilizada (paleta e composição do produto, nunca screenshot ou código real) — mantém a regra de nunca expor código/dados reais, só eleva o nível de acabamento do mockup.
+- **Fundo animado:** as camadas de gradiente ambiente (seção anterior) agora vivem em `body::before` com uma animação lenta de drift (~44s, só roda se o usuário não pediu `prefers-reduced-motion: reduce`, e é desligada em telas ≤640px por custo de performance/bateria).
+- **Reveal ao rolar a página:** `components/Reveal.tsx` usa `IntersectionObserver` para revelar (fade + slide-up) cada bloco de conteúdo conforme entra na viewport, com pequeno stagger entre itens de uma mesma grade. Respeita `prefers-reduced-motion: reduce` (mostra tudo direto, sem animação).
+- **Otimizações mobile:** efeitos de hover (borda-gradiente dos cards) só ativam em dispositivos com mouse real (`@media (hover:hover) and (pointer:fine)`), evitando o estado "grudado" em toque; blur dos glows reduzido em telas pequenas; imagens de mockup com `loading="lazy"`.
+
 ---
 
 ## 6. Estrutura Atual do Site (HTML entregue)
@@ -178,7 +185,7 @@ Arquivo de referência: `portfolio-arthur.html` (versão estática, pronta para 
 4. **Sobre** — bio curta em card claro.
 5. **Skills** — 3 feature cards (Produto & UX / Engenharia Full-Stack / Dados & Automação com IA), cada um com lista de hard skills.
 6. **Projetos** — grid de cards, cada um com:
-   - Mockup estilizado (blocos abstratos representando layout — nunca captura de tela real ou código)
+   - Mockup ilustrado em SVG recriando a interface de forma estilizada (nunca captura de tela real ou código) — ver evolução v3
    - Tags (Geist Mono, uppercase, pequenas)
    - Título e descrição curta
    - Status (bolinha verde = no ar / laranja = em construção) + link "Ver site ↗" quando houver URL pública

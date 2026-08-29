@@ -1,0 +1,56 @@
+<svg viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg">
+  <defs><clipPath id="frame6"><rect x="0" y="0" width="960" height="600" rx="14"/></clipPath></defs>
+  <g clip-path="url(#frame6)">
+    <rect width="960" height="600" fill="#0d0d0d"/>
+    <rect width="960" height="40" fill="#1d1a18"/>
+    <circle cx="24" cy="20" r="6" fill="#3d3a39"/>
+    <circle cx="44" cy="20" r="6" fill="#3d3a39"/>
+    <circle cx="64" cy="20" r="6" fill="#3d3a39"/>
+    <text x="90" y="25" font-family="monospace" font-size="12" letter-spacing="1" fill="#b8b3b0">ESTUDOS.TRILHA</text>
+
+    <!-- sidebar module list -->
+    <rect x="0" y="40" width="200" height="560" fill="#1d1a18"/>
+    <rect x="24" y="64" width="60" height="8" rx="2" fill="#8a8380"/>
+    <rect x="24" y="80" width="152" height="6" rx="3" fill="#3d3a39"/>
+    <rect x="24" y="80" width="60" height="6" rx="3" fill="#a0ca92"/>
+
+    <g font-family="monospace" font-size="10" fill="#b8b3b0">
+      <rect x="16" y="112" width="168" height="28" rx="4" fill="#3d3a39"/>
+      <text x="28" y="130" fill="#eeeeee">SISTEMAS COMP.</text>
+      <text x="28" y="156">REDES</text>
+      <text x="28" y="182">SEGURANÇA</text>
+      <text x="28" y="208">ALGORITMOS</text>
+      <text x="28" y="234">BANCO DE DADOS</text>
+    </g>
+
+    <!-- main content: checklist -->
+    <text x="224" y="76" font-family="monospace" font-size="14" fill="#eeeeee">SISTEMAS COMPUTACIONAIS</text>
+    <text x="224" y="96" font-family="monospace" font-size="10" fill="#8a8380">SISTEMAS OPERACIONAIS, HARDWARE, LINUX</text>
+
+    <g>
+      <rect x="224" y="128" width="14" height="14" rx="3" fill="#a0ca92"/>
+      <path d="M227 135 l3 3 6 -7" stroke="#101010" stroke-width="2" fill="none"/>
+      <rect x="252" y="130" width="360" height="10" rx="2" fill="#8a8380"/>
+
+      <rect x="224" y="160" width="14" height="14" rx="3" fill="#a0ca92"/>
+      <path d="M227 167 l3 3 6 -7" stroke="#101010" stroke-width="2" fill="none"/>
+      <rect x="252" y="162" width="300" height="10" rx="2" fill="#8a8380"/>
+
+      <rect x="224" y="192" width="14" height="14" rx="3" fill="none" stroke="#3d3a39" stroke-width="2"/>
+      <rect x="252" y="194" width="340" height="10" rx="2" fill="#4d4947"/>
+
+      <rect x="224" y="224" width="14" height="14" rx="3" fill="none" stroke="#3d3a39" stroke-width="2"/>
+      <rect x="252" y="226" width="260" height="10" rx="2" fill="#4d4947"/>
+
+      <rect x="224" y="256" width="14" height="14" rx="3" fill="none" stroke="#3d3a39" stroke-width="2"/>
+      <rect x="252" y="258" width="320" height="10" rx="2" fill="#4d4947"/>
+    </g>
+
+    <!-- notes area -->
+    <text x="224" y="320" font-family="monospace" font-size="11" fill="#b8b3b0">ANOTAÇÕES DO MÓDULO</text>
+    <rect x="224" y="336" width="696" height="150" rx="6" fill="#1d1a18" stroke="#3d3a39"/>
+    <rect x="244" y="356" width="400" height="8" rx="2" fill="#3d3a39"/>
+    <rect x="244" y="376" width="320" height="8" rx="2" fill="#3d3a39"/>
+    <rect x="244" y="396" width="360" height="8" rx="2" fill="#3d3a39"/>
+  </g>
+</svg>
