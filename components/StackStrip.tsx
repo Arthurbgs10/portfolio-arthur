@@ -1,6 +1,6 @@
 const tools = [
   { name: 'Next.js', icon: '/icons/nextjs.svg' },
-  { name: 'React', icon: null },
+  { name: 'React', icon: '/icons/reactjs.svg' },
   { name: 'Supabase', icon: '/icons/supabase.svg' },
   { name: 'PostgreSQL', icon: '/icons/postgresql.svg' },
   { name: 'n8n', icon: '/icons/n8n.svg' },
