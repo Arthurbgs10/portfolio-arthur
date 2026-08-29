@@ -148,12 +148,22 @@ Arthur não é "só dev" nem "só PM": ele carrega o projeto do entendimento da 
 - Profundidade só por contraste `#eeeeee`-sobre-`#101010` e respiro de 96px+ entre seções.
 
 ### Don'ts
-- Nenhuma cor de acento adicional além da paleta listada.
+- Nenhuma cor de acento adicional além da paleta listada (exceto os ícones de ferramentas — ver evolução v2 abaixo).
 - Nada de peso 600+/bold em headings.
 - Nunca usar laranja/verde como fundo de botão, card ou texto grande.
-- Nada de sombra, glow ou blur para simular elevação.
+- Nada de sombra, glow ou blur para simular elevação de superfície (ex.: fazer um card "flutuar"). Glow ambiente de cor para dar atmosfera é permitido — ver evolução v2.
 - Nada de serifa ou fonte decorativa — só Geist e Geist Mono.
 - Nunca preencher botão primário com cor de marca — só neutro escuro ou neutro claro.
+
+### Evolução v2 (migração Next.js) — mais cor e profundidade
+
+Depois da primeira versão (seção acima, "v1"), o site ganhou uma camada de elaboração visual mantendo a paleta e a identidade "instrumento" — não é um redesign, é um refinamento:
+
+- **Gradientes ambiente:** radial-gradients de baixa opacidade (~7–30%) em Signal Orange e Metric Green, posicionados atrás do Dashboard Frame (hero), do card "Sobre" e do CTA final, com `filter: blur()`. É luz ambiente/atmosfera ("flash de despacho" do conceito original), não elevação de superfície — os cards continuam flat, sem sombra própria. O fundo da página (`body`) também recebeu 3 camadas radiais fixas e sutis nesses mesmos tons sobre o Obsidian Canvas.
+- **Borda-gradiente no hover:** `feature-card` e `project-card` ganham uma borda de 1px em gradiente diagonal (Signal Orange → Metric Green) só no `:hover`, via mask — no estado padrão continuam com a borda `#1d1a18` sólida original.
+- **Sparklines com área preenchida:** os gráficos do Dashboard Frame agora têm um preenchimento em gradiente (cor do dado → transparente) sob a linha, reforçando a leitura de "dado vivo".
+- **Ícones de ferramentas (exceção deliberada à paleta):** a Stack Strip (e futuramente outros pontos que citem ferramentas específicas) usa os ícones de marca reais de cada ferramenta — Next.js, Supabase, PostgreSQL, n8n, Google Gemini, Claude, Vercel, Looker Studio — nas cores oficiais de cada marca. Isso é uma exceção intencional e restrita a **logos reconhecíveis de ferramentas**, não a cores de UI/acento: não abre precedente para novas cores em botões, cards, textos ou qualquer elemento de interface genérico, que continuam restritos à paleta Factory.
+- Ícones ficam em `public/icons/` (baixados de CDNs públicos de ícones open-source: `dashboard-icons` e `@lobehub/icons-static-svg`).
 
 ---
 

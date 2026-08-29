@@ -16,6 +16,7 @@ export function About() {
             en="Product and engineering in one place."
           />
         </div>
+        <div className="about-wrap">
         <div className="about-card">
           <h3 className="h-heading" style={{ fontSize: 28 }}>
             Arthur Gabriel
@@ -32,6 +33,7 @@ export function About() {
             pt="Já entreguei sites e painéis de gestão para negócios reais (móveis planejados, storymaking de casamentos), além de pipelines de dados com IA e automações de atendimento e onboarding no dia a dia de Customer Success."
             en="I've delivered sites and management dashboards for real businesses (planned furniture, wedding storymaking), plus AI data pipelines and day-to-day support/onboarding automations in Customer Success."
           />
+        </div>
         </div>
       </div>
     </section>

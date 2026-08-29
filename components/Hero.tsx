@@ -40,33 +40,45 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="dash-frame">
-          <div className="dash-titlebar">
-            <span className="dot" />
-            <span className="dot" />
-            <span className="dot" />
-            <span className="label">
-              <span className="pulse" />
-              <I18n pt="perfil.dashboard" en="profile.dashboard" />
-            </span>
-          </div>
-          <div className="dash-grid">
-            {metrics.map((metric, i) => (
-              <div className="metric-tile" key={metric.pt}>
-                <div className="metric-label">
-                  <I18n pt={metric.pt} en={metric.en} />
+        <div className="dash-frame-wrap">
+          <div className="dash-frame">
+            <div className="dash-titlebar">
+              <span className="dot" />
+              <span className="dot" />
+              <span className="dot" />
+              <span className="label">
+                <span className="pulse" />
+                <I18n pt="perfil.dashboard" en="profile.dashboard" />
+              </span>
+            </div>
+            <div className="dash-grid">
+              {metrics.map((metric, i) => (
+                <div className="metric-tile" key={metric.pt}>
+                  <div className="metric-label">
+                    <I18n pt={metric.pt} en={metric.en} />
+                  </div>
+                  <div className="metric-value">{metric.value}</div>
+                  <svg viewBox="0 0 120 32" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id={`metric-glow-${i}`} x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor={sparklines[i].color} stopOpacity="0.35" />
+                        <stop offset="100%" stopColor={sparklines[i].color} stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <polygon
+                      points={`${sparklines[i].points} 120,32 0,32`}
+                      fill={`url(#metric-glow-${i})`}
+                    />
+                    <polyline
+                      points={sparklines[i].points}
+                      fill="none"
+                      stroke={sparklines[i].color}
+                      strokeWidth="2"
+                    />
+                  </svg>
                 </div>
-                <div className="metric-value">{metric.value}</div>
-                <svg viewBox="0 0 120 32" preserveAspectRatio="none">
-                  <polyline
-                    points={sparklines[i].points}
-                    fill="none"
-                    stroke={sparklines[i].color}
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
