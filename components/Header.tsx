@@ -10,6 +10,9 @@ export function Header() {
           <a href="#sobre">
             <I18n pt="Sobre" en="About" />
           </a>
+          <a href="#experiencia">
+            <I18n pt="Experiência" en="Experience" />
+          </a>
           <a href="#skills">Skills</a>
           <a href="#projetos">
             <I18n pt="Projetos" en="Projects" />

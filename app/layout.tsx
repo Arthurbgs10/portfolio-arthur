@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { LangProvider } from "@/lib/i18n";
+import { siteMeta } from "@/lib/content";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,10 +14,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Server-rendered metadata is PT (the default language); LangProvider swaps
+// document.title when the visitor switches to EN.
 export const metadata: Metadata = {
-  title: "Arthur Gabriel — Produto, Desenvolvimento & Dados",
-  description:
-    "Portfólio de Arthur Gabriel — produto, desenvolvimento full-stack e automação de dados com IA.",
+  metadataBase: new URL("https://portfolio-arthur-plum.vercel.app"),
+  title: siteMeta.title.pt,
+  description: siteMeta.description.pt,
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: siteMeta.title.pt,
+    description: siteMeta.description.pt,
+    locale: "pt_BR",
+    alternateLocale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: siteMeta.title.pt,
+    description: siteMeta.description.pt,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

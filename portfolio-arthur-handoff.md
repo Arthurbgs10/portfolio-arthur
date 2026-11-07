@@ -47,7 +47,7 @@ Arthur não é "só dev" nem "só PM": ele carrega o projeto do entendimento da 
 **Hard:**
 - Next.js, React, Supabase, PostgreSQL, Vercel
 - Integração de APIs e construção de painéis administrativos
-- "Vibe coding" combinado a fundamentos técnicos sólidos (não é só prompt solto — há revisão e entendimento do que é gerado)
+- Desenvolvimento assistido por IA combinado a fundamentos técnicos sólidos (não é só prompt solto — há revisão e entendimento do que é gerado)
 
 **Soft:**
 - Autonomia para tocar projeto do zero à entrega
@@ -202,7 +202,7 @@ Arquivo de referência: `portfolio-arthur.html` (versão estática, pronta para 
 
 ### 7.1 Novaes Planejados
 - **O quê:** site + painel de gestão para loja de móveis planejados (Campo Grande, RJ)
-- **Papel de Arthur:** UI/UX e desenvolvimento da landing page ("vibe coding" + fundamentos técnicos), estratégia de assistente guiada por etapas para captar orçamento, análise de dados para o painel de gestão
+- **Papel de Arthur:** UI/UX e desenvolvimento da landing page (desenvolvimento assistido por IA + fundamentos técnicos), estratégia de assistente guiada por etapas para captar orçamento, análise de dados para o painel de gestão
 - **Site público:** https://novaesplanejados.vercel.app/
 - **Painel:** existe, mas **nunca deve ser linkado publicamente nem ter credenciais expostas** — é acesso restrito dos donos do negócio
 - **Status:** no ar

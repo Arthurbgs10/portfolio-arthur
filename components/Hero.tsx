@@ -1,5 +1,6 @@
 import { I18n } from '@/lib/i18n';
 import { Reveal } from './Reveal';
+import { ResumeLink } from './ResumeLink';
 
 const sparklines = [
   { points: '0,26 20,22 40,24 60,14 80,16 100,6 120,8', color: '#ee6018' },
@@ -9,10 +10,14 @@ const sparklines = [
 ];
 
 const metrics = [
-  { pt: 'Projetos entregues', en: 'Projects delivered', value: '06' },
-  { pt: 'Stacks aplicadas', en: 'Stacks applied', value: '08+' },
-  { pt: 'Automações em produção', en: 'Automations in production', value: '02' },
-  { pt: 'Idiomas de trabalho', en: 'Working languages', value: 'PT / EN' },
+  { pt: 'clientes B2B atendidos', en: 'B2B customers supported', value: { pt: '500+', en: '500+' } },
+  { pt: 'canais monitorados com IA', en: 'channels monitored with AI', value: { pt: '485', en: '485' } },
+  { pt: 'atendimentos/mês no pico', en: 'tickets/month at peak', value: { pt: '2.000', en: '2,000' } },
+  {
+    pt: 'início do onboarding após automação',
+    en: 'onboarding kickoff after automation',
+    value: { pt: '1–2d → 0', en: '1–2d → 0' },
+  },
 ];
 
 export function Hero() {
@@ -23,20 +28,32 @@ export function Hero() {
           <span className="location">
             <I18n pt="Rio de Janeiro, Brasil · PT / EN" en="Rio de Janeiro, Brazil · PT / EN" />
           </span>
-          <I18n as="h1" className="h-display" pt="Da ideia ao painel." en="From idea to dashboard." />
+          <span className="eyebrow">
+            <span className="pulse" />
+            <I18n
+              pt="Customer Success Analyst · Implantação & Onboarding · Automação e Dados com IA"
+              en="Customer Success Analyst · Implementation & Onboarding · AI Automation & Data"
+            />
+          </span>
+          <I18n
+            as="h1"
+            className="h-display"
+            pt="Customer Success com automação e dados."
+            en="Customer Success, powered by automation and data."
+          />
           <I18n
             as="p"
             className="lede"
             style={{ marginTop: 24 }}
-            pt="Atuo entre produto, desenvolvimento e dados — construindo sites, painéis de gestão e automações com IA que substituem planilhas e dão visibilidade real a quem decide."
-            en="I work across product, development and data — building sites, management dashboards and AI automations that replace spreadsheets and give real visibility to decision makers."
+            pt="Cuido da jornada de mais de 500 clientes B2B, da implantação à expansão, e uso IA para transformar atendimento em processo, métrica e decisão."
+            en="I manage the journey of 500+ B2B customers, from implementation to expansion, and use AI to turn support into process, metrics and decisions."
           />
           <div className="btn-row">
-            <a href="#projetos" className="btn btn-dark">
-              <I18n pt="Ver projetos" en="View projects" />
-            </a>
-            <a href="#contato" className="btn btn-ghost">
-              <I18n pt="Falar sobre um projeto" en="Talk about a project" />
+            <ResumeLink className="btn btn-dark">
+              <I18n pt="Baixar currículo" en="Download resume" />
+            </ResumeLink>
+            <a href="#projetos" className="btn btn-ghost">
+              <I18n pt="Ver projetos" en="See projects" />
             </a>
           </div>
         </Reveal>
@@ -58,7 +75,7 @@ export function Hero() {
                   <div className="metric-label">
                     <I18n pt={metric.pt} en={metric.en} />
                   </div>
-                  <div className="metric-value">{metric.value}</div>
+                  <I18n as="div" className="metric-value" pt={metric.value.pt} en={metric.value.en} />
                   <svg viewBox="0 0 120 32" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id={`metric-glow-${i}`} x1="0" y1="0" x2="0" y2="1">
