@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useContext, useEffect, useState, type ReactNode, type ElementType, type ComponentPropsWithoutRef } from 'react';
+import { siteMeta } from './content';
 
 type Lang = 'pt' | 'en';
 
@@ -11,6 +12,7 @@ export function LangProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    document.title = siteMeta.title[lang];
   }, [lang]);
 
   return <LangContext.Provider value={{ lang, setLang }}>{children}</LangContext.Provider>;

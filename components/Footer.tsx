@@ -1,4 +1,5 @@
 import { I18n } from '@/lib/i18n';
+import { resume } from '@/lib/content';
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,8 +13,8 @@ export function Footer() {
             <I18n
               as="p"
               style={{ maxWidth: 320 }}
-              pt="Produto, desenvolvimento e dados para negócios reais."
-              en="Product, development and data for real businesses."
+              pt="Customer Success, automação e dados para negócios reais."
+              en="Customer Success, automation and data for real businesses."
             />
           </div>
           <div className="col">
@@ -22,6 +23,9 @@ export function Footer() {
             </h4>
             <a href="#sobre">
               <I18n pt="Sobre" en="About" />
+            </a>
+            <a href="#experiencia">
+              <I18n pt="Experiência" en="Experience" />
             </a>
             <a href="#skills">Skills</a>
             <a href="#projetos">
@@ -44,6 +48,12 @@ export function Footer() {
             </a>
             <a href="https://github.com/Arthurbgs10" target="_blank" rel="noopener">
               GitHub
+            </a>
+            <a href={resume.pt} download target="_blank" rel="noopener">
+              Currículo (PT)
+            </a>
+            <a href={resume.en} download target="_blank" rel="noopener">
+              Resume (EN)
             </a>
           </div>
         </div>

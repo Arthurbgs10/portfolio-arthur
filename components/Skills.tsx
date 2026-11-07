@@ -15,8 +15,8 @@ export function Skills() {
             as="h2"
             className="h-heading"
             style={{ marginBottom: 40 }}
-            pt="Três frentes, um mesmo produto."
-            en="Three fronts, one product."
+            pt="Três frentes, um mesmo cliente."
+            en="Three fronts, one customer."
           />
         </Reveal>
 

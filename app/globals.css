@@ -434,6 +434,63 @@ nav.wrap {
   color: var(--obsidian-canvas);
 }
 
+/* Experience */
+.timeline-period {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--warm-granite);
+  margin-top: 8px;
+}
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--ash-stroke);
+}
+.timeline-item {
+  position: relative;
+  padding: 0 0 32px 28px;
+}
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--ash-stroke);
+}
+.timeline-item.current::before {
+  background: var(--signal-orange);
+}
+.timeline-item h3 {
+  font-size: 20px;
+}
+.timeline-item ul {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+.timeline-item li {
+  font-size: 14px;
+  color: var(--pale-stone);
+  padding: 8px 0;
+  border-top: 1px solid var(--carbon-lift);
+}
+.timeline-item li:first-child {
+  border-top: none;
+}
+.timeline-item:not(.current) li {
+  color: var(--warm-granite);
+}
+
 /* Skills */
 .card-row {
   display: grid;
@@ -503,6 +560,9 @@ nav.wrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--element-gap);
+}
+.project-grid.two-up {
+  grid-template-columns: repeat(2, 1fr);
 }
 .project-card {
   position: relative;
@@ -577,6 +637,37 @@ nav.wrap {
 .project-body p {
   font-size: 14px;
   margin-bottom: 16px;
+}
+.project-body p.project-result {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  color: var(--metric-green);
+  margin-top: auto;
+}
+.project-result + .project-footer {
+  margin-top: 0;
+}
+.project-group + .project-group {
+  margin-top: 56px;
+}
+.project-group-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--pale-stone);
+  padding-bottom: 12px;
+  margin-bottom: var(--element-gap);
+  border-bottom: 1px solid var(--carbon-lift);
+}
+.project-card.compact .project-body h3 {
+  font-size: 18px;
+}
+.project-card.compact .project-body p {
+  font-size: 13px;
 }
 .project-footer {
   margin-top: auto;
@@ -655,6 +746,19 @@ nav.wrap {
 }
 .cta-card .btn-dark {
   background: var(--obsidian-canvas);
+}
+.cta-card .btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.cta-card .btn-ghost {
+  color: var(--obsidian-canvas);
+  border-color: #4d4947;
+}
+.cta-card .btn-ghost:hover {
+  color: var(--obsidian-canvas);
+  border-color: var(--obsidian-canvas);
 }
 
 /* Footer */
@@ -739,8 +843,12 @@ footer .col a:hover {
 }
 
 @media (max-width: 640px) {
-  .project-grid {
+  .project-grid,
+  .project-grid.two-up {
     grid-template-columns: 1fr;
+  }
+  .metric-value {
+    font-size: 26px;
   }
   /* Large blur radii are expensive to repaint on low-power mobile GPUs —
      shrink the ambient glows instead of dropping them outright. */

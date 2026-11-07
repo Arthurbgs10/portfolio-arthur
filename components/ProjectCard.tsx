@@ -3,11 +3,13 @@ import type { Project } from '@/lib/content';
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="project-card">
-      <div className="mock">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={project.mockup} alt="" loading="lazy" decoding="async" />
-      </div>
+    <div className={`project-card${project.compact ? ' compact' : ''}`}>
+      {!project.compact && (
+        <div className="mock">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={project.mockup} alt="" loading="lazy" decoding="async" />
+        </div>
+      )}
       <div className="project-body">
         <div className="project-tags">
           {project.tags.map((tag) => (
@@ -18,6 +20,9 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
         <I18n as="h3" pt={project.title.pt} en={project.title.en} />
         <I18n as="p" pt={project.description.pt} en={project.description.en} />
+        {project.result && (
+          <I18n as="p" className="project-result" pt={project.result.pt} en={project.result.en} />
+        )}
         <div className="project-footer">
           <span className="project-status">
             <span className={`status-dot${project.status.dot === 'building' ? ' building' : ''}`} />
